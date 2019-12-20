@@ -1,0 +1,30 @@
+@model Dish
+<div class="container">
+   <a href="/" class="btn btn-primary home">Home</a>
+   <div class="center-outer">
+      <div class="center-inner">
+         <div class="bubbles">
+            <h1>Dish: @Model.Name</h1>
+         </div>
+      </div>
+   </div>
+   <hr>
+   <table class="table table-striped table-dark line">
+      <thead>
+         <tr>
+            <th scope="col">Chef</th>
+            <th scope="col">Description</th>
+            <th scope="col">Calories</th>
+            <th scope="col">Tastiness</th>
+         </tr>
+      </thead>
+      <tbody class="smooth-scroll">
+         <tr>
+            <td class="c">@Model.Chef.FirstName</td>
+            <td>@Model.Description</td>
+            <td>@Model.Calories</td>
+            <td>@Model.Tastiness</td>
+         </tr>
+      </tbody>
+   </table>
+</div>

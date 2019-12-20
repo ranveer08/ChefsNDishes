@@ -1,0 +1,34 @@
+﻿@model Chef
+<div class="container">
+    <h1 class="text-center">Chefs | <a href="/dishes">Dishes</a></h1>
+        <div class="center-outer">
+        <div class="center-inner">
+
+            <div class="bubbles">
+            <h2>Check out our roster of Chefs!</h2>
+        </div>
+        </div>
+    </div> 
+    <h2><a href="/new" class="new-chef btn btn-primary pull-right">Add a Chef</a></h2>
+    <hr>
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col"># of Dishes</th>
+            </tr>
+        </thead>
+        <tbody class="smooth-scroll">
+            @foreach (var chef in ViewBag.AllChefs)
+            {
+                <tr>
+                    <td class="c">@chef.FirstName @chef.LastName</td>
+                    <td>@chef.Age</td>
+                    <td>@chef.AddedDishes.Count</td>
+                    <td ><a asp-action="DeleteChef" asp-controller="Home" asp-route-chefId="@chef.ChefId" class = "btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
